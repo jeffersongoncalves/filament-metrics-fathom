@@ -9,21 +9,34 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-metrics-fathom.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-fathom)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-metrics-fathom/phpstan.yml?branch=2.x&label=phpstan&style=flat-square)](https://github.com/jeffersongoncalves/filament-metrics-fathom/actions?query=workflow%3Aphpstan+branch%3A2.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-metrics-fathom.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-fathom)
+[![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-metrics-fathom.svg?style=flat-square)](LICENSE.md)
+[![PHP Version](https://img.shields.io/packagist/php-v/jeffersongoncalves/filament-metrics-fathom.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-fathom)
 
-Filament plugin for **Fathom Analytics** metrics. Provides a settings page and dashboard widgets to visualize your website analytics directly in Filament.
+A [Filament](https://filamentphp.com) plugin that integrates [Fathom Analytics](https://usefathom.com) into your admin panel. Get real-time visitor counts, pageview charts, top pages, referrers, browsers, countries and device breakdowns — all from your Filament dashboard.
+
+## Features
+
+- Settings page to configure Fathom API credentials directly from the panel
+- 7 ready-to-use dashboard widgets (stats, charts, tables)
+- Real-time visitor count with automatic polling (every 30s)
+- Caching built-in to respect Fathom API rate limits (10 req/min)
+- Multi-language support (English and Brazilian Portuguese)
+- Fully configurable: enable/disable settings page and widgets independently
 
 ## Version Compatibility
 
-| Plugin | Filament | Laravel | PHP |
-|--------|----------|---------|-----|
-| 1.x | 3.x | 10.x / 11.x | 8.2+ |
-| **2.x** | **4.x** | **11.x+** | **8.2+** |
-| 3.x (soon) | 5.x | 11.x+ | 8.2+ |
+| Plugin | Filament | Laravel | PHP | Livewire |
+|--------|----------|---------|-----|----------|
+| 1.x | 3.x | 10.x / 11.x | 8.2+ | 3.x |
+| **2.x** | **4.x** | **11.x+** | **8.2+** | **3.x** |
+| 3.x | 5.x | 11.x+ | 8.2+ | 4.x |
 
 ## Requirements
 
-- [jeffersongoncalves/laravel-metrics-fathom](https://github.com/jeffersongoncalves/laravel-metrics-fathom) `^1.0`
-- [filament/spatie-laravel-settings-plugin](https://filamentphp.com/plugins/filament-spatie-settings) `^4.0`
+- PHP 8.2+
+- [Filament](https://filamentphp.com) ^4.0
+- [jeffersongoncalves/laravel-metrics-fathom](https://github.com/jeffersongoncalves/laravel-metrics-fathom) ^1.0
+- [filament/spatie-laravel-settings-plugin](https://filamentphp.com/plugins/filament-spatie-settings) ^4.0
 
 ## Installation
 
@@ -53,9 +66,9 @@ public function panel(Panel $panel): Panel
 }
 ```
 
-## Configuration Options
+## Configuration
 
-You can disable the settings page or widgets:
+You can enable or disable features individually:
 
 ```php
 FathomMetricsPlugin::make()
@@ -78,9 +91,10 @@ The plugin provides 7 dashboard widgets:
 | **Top Devices** | Device type distribution (desktop, mobile, tablet) | Doughnut Chart |
 
 All widgets include:
+
 - Automatic error handling with user-friendly messages
 - "Not Configured" state when API token is missing
-- Caching to respect Fathom API rate limits (10 req/min)
+- Built-in caching to respect Fathom API rate limits
 - Multi-language support (English and Portuguese)
 
 ## Translations
