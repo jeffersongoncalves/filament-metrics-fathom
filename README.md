@@ -7,6 +7,7 @@
 # Filament Metrics Fathom
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-metrics-fathom.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-fathom)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-metrics-fathom/fix-php-code-style-issues.yml?branch=1.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-metrics-fathom/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3A1.x)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-metrics-fathom/phpstan.yml?branch=1.x&label=phpstan&style=flat-square)](https://github.com/jeffersongoncalves/filament-metrics-fathom/actions?query=workflow%3Aphpstan+branch%3A1.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-metrics-fathom.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-metrics-fathom)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-metrics-fathom.svg?style=flat-square)](LICENSE.md)
@@ -39,6 +40,8 @@ A [Filament](https://filamentphp.com) plugin that integrates [Fathom Analytics](
 - [filament/spatie-laravel-settings-plugin](https://filamentphp.com/plugins/filament-spatie-settings) ^3.0
 
 ## Installation
+
+You can install the package via composer:
 
 ```bash
 composer require jeffersongoncalves/filament-metrics-fathom:"^1.0"
