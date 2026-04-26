@@ -1,6 +1,6 @@
 <div class="filament-hidden">
 
-![Filament Metrics Fathom](https://raw.githubusercontent.com/jeffersongoncalves/filament-metrics-fathom/1.x/art/jeffersongoncalves-filament-metrics-fathom.jpg)
+![Filament Metrics Fathom](https://raw.githubusercontent.com/jeffersongoncalves/filament-metrics-fathom/1.x/art/jeffersongoncalves-filament-metrics-fathom.png)
 
 </div>
 
