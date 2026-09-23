@@ -2,7 +2,6 @@
 
 namespace JeffersonGoncalves\Filament\MetricsFathom;
 
-use Filament\Contracts\Plugin;
 use Filament\Panel;
 use JeffersonGoncalves\Filament\MetricsFathom\Pages\FathomMetricsSettingsPage;
 use JeffersonGoncalves\Filament\MetricsFathom\Widgets\CurrentVisitorsWidget;
@@ -12,38 +11,25 @@ use JeffersonGoncalves\Filament\MetricsFathom\Widgets\TopCountriesWidget;
 use JeffersonGoncalves\Filament\MetricsFathom\Widgets\TopDevicesWidget;
 use JeffersonGoncalves\Filament\MetricsFathom\Widgets\TopPagesWidget;
 use JeffersonGoncalves\Filament\MetricsFathom\Widgets\TopReferrersWidget;
+use JeffersonGoncalves\FilamentAnalyticsCore\AbstractAnalyticsPlugin;
 
-class FathomMetricsPlugin implements Plugin
+class FathomMetricsPlugin extends AbstractAnalyticsPlugin
 {
-    protected bool $hasSettingsPage = true;
-
     protected bool $hasWidgets = true;
-
-    public static function make(): static
-    {
-        return app(static::class);
-    }
-
-    public static function get(): static
-    {
-        /** @var static $plugin */
-        $plugin = filament(app(static::class)->getId());
-
-        return $plugin;
-    }
 
     public function getId(): string
     {
         return 'filament-metrics-fathom';
     }
 
+    protected function getSettingsPageClass(): ?string
+    {
+        return FathomMetricsSettingsPage::class;
+    }
+
     public function register(Panel $panel): void
     {
-        if ($this->hasSettingsPage) {
-            $panel->pages([
-                FathomMetricsSettingsPage::class,
-            ]);
-        }
+        parent::register($panel);
 
         if ($this->hasWidgets) {
             $panel->widgets([
@@ -56,15 +42,6 @@ class FathomMetricsPlugin implements Plugin
                 TopDevicesWidget::class,
             ]);
         }
-    }
-
-    public function boot(Panel $panel): void {}
-
-    public function settingsPage(bool $condition = true): static
-    {
-        $this->hasSettingsPage = $condition;
-
-        return $this;
     }
 
     public function widgets(bool $condition = true): static
