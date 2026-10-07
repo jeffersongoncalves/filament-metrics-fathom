@@ -1,8 +1,2 @@
 parameters:
-    ignoreErrors:
-        -
-            message: '#Static property .+::\$view \(view-string\) does not accept default value of type string#'
-            paths:
-                - src/Widgets/TopPagesWidget.php
-                - src/Widgets/TopReferrersWidget.php
-                - src/Widgets/TopCountriesWidget.php
+    ignoreErrors: []
