@@ -32,6 +32,15 @@ A [Filament](https://filamentphp.com) plugin that integrates [Fathom Analytics](
 | **2.x** | **4.x** | **11.x+** | **8.2+** | **3.x** |
 | 3.x | 5.x | 11.x+ | 8.2+ | 4.x |
 
+### Navigation group
+
+Put the settings page in one of your panel's own navigation groups (a string or a closure):
+
+```php
+FathomMetricsPlugin::make()
+    ->navigationGroup(fn (): string => __('admin.navigation.settings')),
+```
+
 ## Requirements
 
 - PHP 8.2+

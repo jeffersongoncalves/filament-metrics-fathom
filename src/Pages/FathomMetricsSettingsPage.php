@@ -7,6 +7,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Pages\SettingsPage;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use JeffersonGoncalves\FilamentAnalyticsCore\AbstractAnalyticsPlugin;
 use JeffersonGoncalves\MetricsFathom\Settings\FathomSettings;
 
 class FathomMetricsSettingsPage extends SettingsPage
@@ -17,7 +18,7 @@ class FathomMetricsSettingsPage extends SettingsPage
 
     public static function getNavigationGroup(): string|\UnitEnum|null
     {
-        return __('filament-metrics-fathom::metrics-fathom.navigation_group');
+        return AbstractAnalyticsPlugin::navigationGroupFor('filament-metrics-fathom') ?? __('filament-metrics-fathom::metrics-fathom.navigation_group');
     }
 
     public static function getNavigationLabel(): string
